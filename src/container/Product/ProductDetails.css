@@ -1,0 +1,58 @@
+.img_details{
+    height: '100vh';
+    width: 100%;
+}
+
+.item_details1{
+    font-family: serif;
+    font-size: 45px;
+}
+.item_details2{
+    font-family: serif;
+    font-size: 30px;
+}
+.item_details3{
+    font-family: serif;
+    font-size: 26px;
+}
+.item_details4{
+    font-family: serif;
+    font-size: 23px;
+}
+
+.span_details{
+    font-family: serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 
+@media screen and (max-width: 750px){
+    .detal p{
+        font-size: medium;
+    }
+}
+@media screen and (max-width: 630px){
+    .detal p{
+        height: 500px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 500px){
+    .detal p{
+        height: 400px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 400px){
+    .detal p{
+        height: 330px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 350px){
+    .detal p{
+        height: 300px;
+        text-align: center;
+    }
+} */

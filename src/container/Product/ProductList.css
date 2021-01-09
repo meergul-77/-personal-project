@@ -1,0 +1,23 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.pag-list{
+    margin: auto;
+}
+.product-card-admin{
+    margin:25px
+}
+
+@media screen and (max-width:375px){
+    .product-list{
+        display: block;
+        width: 100%;
+    }
+    .pagination{
+        width: 100%;
+        margin-bottom: 30px;
+        padding-left: 15px;
+    }
+}

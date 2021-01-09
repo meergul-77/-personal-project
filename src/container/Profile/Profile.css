@@ -1,0 +1,29 @@
+.profileInp{
+    margin: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 760px){
+    .profileInp{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .container1{
+        margin: 50px 0px;
+        width: 600px;
+    }
+    .container2{
+        margin: 50px 0px;
+        width: 600px;
+    }
+}
+@media screen and (max-width: 430px){
+    .container1{
+        margin: 50px 0px;
+        width: 300px;
+        justify-content: center;
+        text-align: center;
+    }
+}
