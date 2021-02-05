@@ -58,7 +58,7 @@ const ProfileContextProvider = ({ children }) => {
     const history = useHistory();
     const getreviewData = async () => {
 
-        let { data } = await axios(`http://localhost:8000/comment`)
+        let { data } = await axios(`${JSON_API}/comment`)
         dispatch({
             type: "GET_CONTACTS_DATA",
             payload: data
@@ -66,12 +66,12 @@ const ProfileContextProvider = ({ children }) => {
     }
 
     const addTask = async (newTask) => {
-        await axios.post('http://localhost:8000/comment', newTask)
+        await axios.post(`${JSON_API}/comment`, newTask)
         getreviewData()
     }
 
     const deleteTask = async (id) => {
-        await axios.delete(`http://localhost:8000/comment/${id}`)
+        await axios.delete(`${JSON_API}/comment/${id}`)
         getreviewData()
     }
 
@@ -114,7 +114,7 @@ const ProfileContextProvider = ({ children }) => {
         if (!params.get("_page")) params.set("_page", 1);
         if (!params.get("_limit")) params.set("_limit", 3);
         history.push("/list?" + params);
-        let { data, headers } = await axios(`http://localhost:8000/products?${params}`);
+        let { data, headers } = await axios(`${JSON_API}/products?${params}`);
         dispatch({
             type: "SET_TOTAL_COUNT",
             payload: parseInt(headers["x-total-count"])
@@ -143,7 +143,7 @@ const ProfileContextProvider = ({ children }) => {
         if (!params.get("_page")) params.set("_page", 1);
         if (!params.get("_limit")) params.set("_limit", 3);
         history.push("/admin?" + params);
-        let { data, headers } = await axios(`http://localhost:8000/products?${params}`);
+        let { data, headers } = await axios(`${JSON_API}/products?${params}`);
         dispatch({
             type: "SET_TOTAL_COUNT",
             payload: parseInt(headers["x-total-count"])
@@ -156,17 +156,17 @@ const ProfileContextProvider = ({ children }) => {
 
 
     const addTaskAdmin = async (newTask) => {
-        await axios.post('http://localhost:8000/products', newTask)
+        await axios.post(`${JSON_API}/products`, newTask)
         getproductsAdmin()
     }
 
     const deleteTaskAdmin = async (id) => {
-        await axios.delete(`http://localhost:8000/products/${id}`)
+        await axios.delete(`${JSON_API}/products/${id}`)
         getproductsAdmin()
     }
 
     const editTodo = async (id) => {
-        let { data } = await axios(`http://localhost:8000/products/${id}`)
+        let { data } = await axios(`${JSON_API}/products/${id}`)
         dispatch({
             type: "EDIT_TODO",
             payload: data
@@ -174,21 +174,21 @@ const ProfileContextProvider = ({ children }) => {
     }
     const saveTask = async (newTask, history) => {
         try {
-            await axios.patch(`http://localhost:8000/products/${newTask.id}`, newTask)
+            await axios.patch(`${JSON_API}/products/${newTask.id}`, newTask)
             history.push('/admin')
         } catch (error) {
             history.push('/error')
         }
     }
     const getproductsDataRating = async (id) => {
-        let { data, headers } = await axios(`http://localhost:8000/products?${id}`);
+        let { data, headers } = await axios(`${JSON_API}/products?${id}`);
         dispatch({
             type: "CET_CONTACTS_DATA",
             payload: data
         })
     }
     const detailsTodo = async (id) => {
-        let { data } = await axios(`http://localhost:8000/products/${id}`)
+        let { data } = await axios(`${JSON_API}/products/${id}`)
         dispatch({
             type: "DETAILS_TODO",
             payload: data
@@ -264,7 +264,7 @@ const ProfileContextProvider = ({ children }) => {
 
     async function ratingProduct(id, rating) {
         console.log(id,rating);
-        await axios.patch(`http://localhost:8000/products/${id}`, {rating: rating})
+        await axios.patch(`${JSON_API}/products/${id}`, {rating: rating})
         getproductsDataRating()
     }
 
