@@ -39,7 +39,7 @@ const Routes = () => {
                     <Route exact path='/admin' component={AdminPanel} />
                     <Route exact path='/edit' component={EditProduct} />
                     <Route exact path='/list' component={ProductList} />
-                    <Route exact path='/details:id' component={ProductDetails} />
+                    <Route exact path='/details/:id' component={ProductDetails} />
                     <Route exact path="/cart" component={Cart} />
                     <Route exact path="/makeorder" component={CreditCard} />
                     <Route exact path="/search" component={SearchPage} />

@@ -29,7 +29,7 @@ const CountryList = ({countryList=[]}) => {
                             title={<Typography variant="h5" align="center">{item.title}</Typography>}
                         />
                         <div className="img-block">
-                        <Link to={`/details` + item.id}>
+                        <Link to={`/details/` + item.id}>
                         <img src={item.img} alt="" />
                         </Link>
                         </div>

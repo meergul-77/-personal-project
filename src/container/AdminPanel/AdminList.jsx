@@ -71,7 +71,7 @@ const AdminList = () => {
                                 <IconButton variant="outlined" color="primary" className="btn-edit" onClick={() => editTodo(item.id)}><CreateIcon /></IconButton>
                             </Link>
                             <Link to="/details">
-                                <Button onClick={() => detailsTodo(item.id)} variant="contained" color="primary" style={{ width: "50px", height: "26px", fontSize: "10px" }} >Details</Button>
+                                <Button onClick={() => sTodo(item.id)} variant="contained" color="primary" style={{ width: "50px", height: "26px", fontSize: "10px" }} >Details</Button>
                             </Link>
                         </CardActions>
                     </Card>
